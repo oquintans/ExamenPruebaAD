@@ -189,11 +189,7 @@ public class Exa17oraclemongo {
                     Double prezo = rs1.getDouble("prezo");
                     Double total = prezo * cant;
 
-                    MongoClient cliente2 = new MongoClient("localhost", 27017);
-                    System.out.println("Conexion a mongo realizada.");
-
-                    db = cliente2.getDatabase("tenda");
-                    System.out.println("Conectado a BD tenda");
+                   
 
                     MongoCollection col2 = db.getCollection("vendas");
                     System.out.println("Conectado a colleccion vendas.");
@@ -206,7 +202,7 @@ public class Exa17oraclemongo {
                             .append("total", total)
                     );
                     System.out.println("Inserccion realizada");
-                    cliente2.close();
+                    //cliente2.close();
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(Exa17oraclemongo.class.getName()).log(Level.SEVERE, null, ex);
